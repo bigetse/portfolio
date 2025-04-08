@@ -1,0 +1,63 @@
+$color-primary: #2f1f40;
+$color-secondary: #481b38;
+$color-tertiary: #e74c3c;
+
+$color-background: (
+  'primary': #1f2140,
+  'secondary': #f0f0f0,
+  'tertiary': #2d2e4c,
+  'opaque': rgba(255, 255, 255, 0.05),
+  'gradient-radial': radial-gradient(circle, #481b38, #2f1f40, #481b38, #1F2140),
+  'gradient-radial-two': radial-gradient(circle, #481b38, #2f1f40, #481b38, #1F2140),
+  'gradient-linear': linear-gradient(to bottom, #1F2140, #2f1f40, #1F2140),
+);
+
+$color-accent: (
+  'primary': #ffcaeb,
+  'secondary': #481b38,
+  'tertiary': #33ff57,
+);
+
+$color-font: (
+  'neutral-10': #ffffff,
+  'neutral-20': #E5E6F0,
+  'neutral-30': #aaaccc,
+  'purple-10': #1f2140,
+);
+
+$font-weights: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+);
+
+$font-sizes: (
+  'xs': 0.75rem,
+  'sm': 0.875rem,
+  'md': 1rem,
+  'lg': 1.25rem,
+  'xl': 1.5rem,
+  'xxl': 2rem,
+  '3xl': 2.5rem,
+  '4xl': 3rem,
+);
+
+$spacing: (
+  'xxs': 0.25rem,
+  'xs': 0.5rem,
+  's': 0.75rem,
+  '1-x': 1rem,
+  '2-x': 2rem,
+  '3-x': 3rem,
+  '4-x': 4rem,
+  '5-x': 5rem,
+  '6-x': 6rem,
+  '7-x': 7rem,
+  '8-x': 8rem,
+  '9-x': 9rem,
+  '10-x': 10rem,
+  '15-x': 15rem,
+  '20-x': 20rem,
+)
