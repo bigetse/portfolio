@@ -112,11 +112,12 @@ section {
   max-width: 900px;
   min-height: 90vh;
   align-items: start;
-  padding: 8rem 4rem;
+  padding: 8rem 6rem;
 }
 .hero .hero__title {
   margin-top: auto;
   font-family: Plus Jakarta Sans;
+  text-align: center;
   word-spacing: 1.5px;
   font-size: 2rem;
   font-weight: 700;
@@ -159,6 +160,7 @@ section {
 }
 .hero .hero__job {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: auto;
   align-items: center;
@@ -385,8 +387,10 @@ section {
   transition: color 0.3s ease;
   height: 100%;
 }
-#contact .contact__links-btn img {
+#contact .contact__links-btn svg {
   height: 32px;
+  fill: #ffcaeb;
+  transition: transform 0.3s ease;
 }
 #contact .contact__links-btn:hover {
   background: #ffcaeb;
@@ -396,6 +400,9 @@ section {
 #contact .contact__links-btn:hover .contact__links-icon {
   transform: scale(1.2);
   transition: transform 0.3s ease;
+}
+#contact .contact__links-btn:hover svg {
+  fill: #1f2140;
 }
 
 /*@keyframes linearBackgroundAnimation {

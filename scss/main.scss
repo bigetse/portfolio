@@ -138,12 +138,13 @@ section {
   max-width: 900px;
   min-height: 90vh;
   align-items: start;
-  padding: spacing('8-x') spacing('4-x');
+  padding: spacing('8-x') spacing('6-x');
 
 
   #{&}__title {
     margin-top: auto;
     font-family: Plus Jakarta Sans;
+    text-align: center;
     word-spacing: 1.5px;
     font-size: font-size('xxl');
     font-weight: weight('bold');
@@ -192,6 +193,7 @@ section {
 
   #{&}__job {
     display: flex;
+    justify-content: center;
     gap: spacing('xs');
     margin-bottom: auto;
     align-items: center;
@@ -422,6 +424,12 @@ section {
     }
 
     &-btn {
+      svg {
+        height: 32px;
+        fill: acc-color('primary');
+        transition: transform 0.3s ease;
+      }
+
       display: flex;
       flex-direction: column;
       background: none;
@@ -439,10 +447,6 @@ section {
       transition: color 0.3s ease;
       height: 100%;
 
-      img {
-        height: 32px;
-      }
-
       &:hover {
         background: acc-color('primary');
         color: font-color('purple-10');
@@ -451,6 +455,10 @@ section {
         .contact__links-icon {
           transform: scale(1.2);
           transition: transform 0.3s ease;
+        }
+
+        svg {
+          fill: bg-color('primary');
         }
       }
     }
