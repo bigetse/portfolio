@@ -18,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
       lastScrollY = window.scrollY;
   });
 
+  const r = new rive.Rive({
+    src: "./dist/hero-animation.riv",
+    canvas: document.getElementById("riveCanvas"),
+    autoplay: true,
+    stateMachines: "State Machine 1",
+    onLoad: () => {
+      r.resizeDrawingSurfaceToCanvas()
+      console.log("Rive animation loaded!");
+    },
+  });
+
     // Image sets for two scrolling rows
     const imagesRow1 = [
         "https://res.cloudinary.com/dekvvbagz/image/upload/v1743897008/home-credit-card_dfvztx.png",
