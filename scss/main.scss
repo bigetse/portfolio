@@ -130,18 +130,19 @@ section {
 }
 
 .hero {
-  background: bg-color('gradient-radial');
+  background: bg-color('gradient-linear');
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: spacing('2-x');
-  max-width: 900px;
   min-height: 90vh;
-  align-items: start;
-  padding: spacing('8-x') spacing('6-x');
+  align-items: center;
+  padding: spacing('8-x') spacing('8-x');
 
 
   #{&}__title {
+    max-width: 700px;
     margin-top: auto;
     font-family: Plus Jakarta Sans;
     text-align: center;
@@ -153,12 +154,15 @@ section {
   }
 
   #{&}__links {
+    margin-top: spacing('4-x');
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     align-items: start;
     width: 100%;
-    border-radius: 100%;
+    border-radius: 8px;
     transition: transform 0.3s ease;
+    border: 1px solid bg-color('opaque');
 
     &-line {
       height: 1px;
@@ -168,11 +172,12 @@ section {
 
     &-btn {
       background: none;
+      align-items: center;
       width: 100%;
       display: flex;  
       justify-content: space-between;
       color: font-color('neutral-30');
-      padding: spacing('1-x') 0;
+      padding: spacing('1-x');
       text-decoration: none;
       font-size: font-size('md');
       font-weight: weight('regular');
@@ -198,6 +203,7 @@ section {
     margin-bottom: auto;
     align-items: center;
     width: 100%;
+    text-align: center;
   }
 
   #{&}-icon {
@@ -214,6 +220,12 @@ section {
   max-width: 700px;
   padding: spacing('6-x') spacing('4-x');
   overflow: hidden;
+}
+
+.work__thumbnail {
+  width: 100px;
+  border-radius: 4px;
+  object-fit: cover;
 }
 
 .work__title {
@@ -258,7 +270,7 @@ section {
 
   &-item {
     display: flex;
-    gap: spacing('5-x');
+    gap: spacing('2-x');
     padding: spacing('1-x') 0;
 
     &-project {
@@ -753,5 +765,13 @@ section {
   color: white;
   cursor: pointer;
   z-index: 10000;
+}
+
+footer {
+  padding: spacing('s');
+  font-size: font-size('xs');
+  justify-content: center;
+  text-align: center;
+  background-color: bg-color('opaque');
 }
 
