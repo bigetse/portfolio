@@ -3,13 +3,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
     const closeBtn = document.getElementById("close-btn");
+    const toggleButton = document.querySelector('.navbar__toggle');
+    const navMenu = document.querySelector('.navbar__menu');
+    const navLinks = document.querySelectorAll('.navbar__links');
 
+    if (toggleButton && navMenu) {
+        toggleButton.addEventListener('click', () => {
+            navMenu.classList.toggle('active'); // Toggle the visibility of the nav links
+        });
+    }
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active'); // Close the menu when a link is clicked
+        });
+    });
+    
     // Hide the header when scrolling down and show it when scrolling up
     const header = document.querySelector("header");
     let lastScrollY = window.scrollY;
     const threshold = 10;
+    const isLargeScreen = () => window.matchMedia("(min-width: 1024px)").matches;
+
 
   window.addEventListener("scroll", () => {
+    if (!isLargeScreen()) return;
       if (window.scrollY > lastScrollY) {
           header.style.transform = "translateY(100%)"; // Hide header
       } else {

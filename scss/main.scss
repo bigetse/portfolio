@@ -1,6 +1,7 @@
 @import './resets';
 @import './variables';
 @import './study';
+@import './mixins';
 
 @function weight($weight-name) {
   @return map-get($font-weights , $weight-name);
@@ -43,6 +44,10 @@ body {
   align-items: center;
   gap: spacing('20-x');
   overflow-x: hidden;
+
+  @include respond-to(medium) {
+    gap: spacing('4-x');
+  }
 }
 
 h {
@@ -61,6 +66,16 @@ header {
   z-index: 1000;
   transition: transform 0.5s ease-in-out;
 
+  @include respond-to(medium) {
+    flex-direction: column;
+    background-color: bg-color('tertiary');
+    padding: 0;
+    position: fixed; 
+    top: 0;
+    bottom: auto; 
+    transform: translateY(0);
+  }
+
   &.hidden {
     transform: translateY(100%);
   }
@@ -72,6 +87,122 @@ header {
   justify-content: space-between;
   z-index: 99;
   padding-top: spacing('2-x');
+  position: relative;
+
+  &__toggle {
+    display: none;
+    font-size: font-size('xxl');
+    background: none;
+    border: none;
+    color: font-color('neutral-10');
+    cursor: pointer;
+    z-index: 100;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: right;
+    gap: spacing('xs');
+    text-shadow: 0 0 3px #2f1f40, 0 0 3px #2f1f40, 0 0 3px #ffcaeb;
+
+    a {
+      text-decoration: none;
+      color: font-color('neutral-20');
+      font-size: font-size('sm');
+      font-weight: weight('regular');
+      padding: spacing('1-x') 0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        color: acc-color('primary');
+        text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  @include respond-to(medium) {
+    flex-direction: column;
+    padding-bottom: spacing('2-x');
+
+    .navbar__name-link {
+      display: none;
+    }
+
+    &__toggle {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 spacing('2-x');
+      align-items: center;
+
+      h2 {
+        font-family: Plus Jakarta Sans;
+        font-size: font-size('sm');
+        font-weight: weight('medium');
+        color: font-color('neutral-20');
+        text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+      }
+
+      h3 {
+        font-family: Plus Jakarta Sans;
+        font-size: font-size('xl');
+        color: font-color('neutral-10');
+        text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+      }
+    }
+
+    &__menu {
+      display: none;
+      flex-direction: column;
+      align-items: start;
+      padding: spacing('2-x') spacing('2-x');
+      gap: spacing('2-x');
+      width: 100%;
+      background: bg-color('neutral-90');
+      margin-top: spacing('2-x');
+
+      &.active {
+        display: flex;
+        transform: translateY(0);
+      }
+    }
+
+    &__links {
+      flex-direction: column;
+      width: 100%;
+      text-align: left;
+      gap: spacing('2-x');
+
+      a {
+        text-decoration: none;
+        color: font-color('neutral-20');
+        font-size: font-size('lg');
+        font-weight: weight('regular');
+        padding: spacing('1-x') 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: acc-color('primary');
+          text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 
     &__name-link {
       display: flex;
@@ -90,31 +221,6 @@ header {
         text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
       }
     }
-
-
-    &__links {
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-      text-align: right;
-      gap: spacing('xs');
-      text-shadow: 0 0 3px #2f1f40, 0 0 3px #2f1f40, 0 0 3px #ffcaeb;
-
-      a {
-        text-decoration: none;
-        color: font-color('neutral-20');
-        font-size: font-size('sm');
-        font-weight: weight('regular');
-        padding: spacing('1-x') 0;
-        transition: background-color 0.3s ease, color 0.3s ease;
-
-        &:hover {
-          color: acc-color('primary');
-          text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
-          transform: scale(1.2);
-        }
-      }
-    }
 }
 
 section {
@@ -127,11 +233,21 @@ section {
   padding: spacing('2-x');
   position: relative;
   gap: spacing('4-x');
+
+  @include respond-to(medium) {
+    min-height: auto;
+    padding: spacing('2-x');
+    gap: spacing('2-x');
+  }
 }
 
 #riveCanvas {
   position: absolute;
   top: 20%;
+
+  @include respond-to(medium) {
+    display: none;
+  }
 }
 
 .hero {
@@ -146,6 +262,12 @@ section {
   padding: spacing('8-x') spacing('8-x');
   position: relative;
 
+  @include respond-to(medium) {
+    min-height: auto;
+    padding: spacing('10-x') spacing('2-x') spacing('4-x') spacing('2-x');
+    justify-content: left;
+    align-items: start;
+  }
 
   #{&}__title {
     max-width: 700px;
@@ -157,6 +279,16 @@ section {
     font-weight: weight('bold');
     color: font-color('neutral-10');
     text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+
+    @include respond-to(medium) {
+      max-width: 700px;
+      text-align: left;
+      font-size: font-size('xl');
+    }
+
+    @include respond-to(small) {
+      max-width: 100%;
+    }
   }
 
   #{&}__links {
@@ -169,6 +301,11 @@ section {
     border-radius: 8px;
     transition: transform 0.3s ease;
     border: 1px solid bg-color('opaque');
+
+    @include respond-to(medium) {
+      max-width: 100%;
+    }
+    
 
     &-line {
       height: 1px;
@@ -210,6 +347,11 @@ section {
     align-items: center;
     width: 100%;
     text-align: center;
+
+    @include respond-to(medium) {
+      justify-content: left;
+      text-align: left;
+    }
   }
 
   #{&}-icon {
@@ -226,12 +368,14 @@ section {
   max-width: 700px;
   padding: spacing('6-x') spacing('4-x');
   overflow: hidden;
-}
 
-.work__thumbnail {
-  width: 100px;
-  border-radius: 4px;
-  object-fit: cover;
+  @include respond-to(medium) {
+    width: 100%;
+    padding: auto;
+    justify-content: left;
+    max-width: 100%;
+    padding: spacing('6-x') spacing('2-x');
+  }
 }
 
 .work__title {
@@ -240,6 +384,10 @@ section {
   font-weight: weight('bold');
   color: font-color('neutral-10');
   text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+
+  @include respond-to(medium) {
+    font-size: font-size('xl');
+  }
 }
 
 .work__content {
@@ -290,6 +438,11 @@ section {
       align-items: center;
       gap: spacing('xs');
       color: font-color('neutral-10');
+
+      @include respond-to(small) {
+        flex-direction: column;
+        align-items: start;
+      }
     }
 
     &-tag {
@@ -345,6 +498,14 @@ section {
   line-height: 1.5;
   vertical-align: middle;
 
+  @include respond-to(medium) {
+    width: 100%;
+    padding: auto;
+    justify-content: left;
+    max-width: 100%;
+    padding: spacing('6-x') spacing('2-x');
+  }
+
   a {
     text-decoration: none;
     color: font-color('neutral-20');
@@ -370,6 +531,10 @@ section {
   font-weight: weight('bold');
   color: font-color('neutral-10');
   text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+
+  @include respond-to(medium) {
+    font-size: font-size('xl');
+  }
 }
 
 .about__resume {
@@ -419,12 +584,24 @@ section {
   max-width: 700px;
   padding: spacing('20-x') spacing('4-x');
 
+  @include respond-to(medium) {
+    width: 100%;
+    padding: auto;
+    justify-content: left;
+    max-width: 100%;
+    padding: spacing('6-x') spacing('2-x');
+  }
+
   .contact__title {
     font-family: Plus Jakarta Sans;
     font-size: font-size('xxl');
     font-weight: weight('bold');
     color: font-color('neutral-10');
     text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
+
+    @include respond-to(medium) {
+      font-size: font-size('xl');
+    }
   }
 
   .contact__links {
@@ -434,6 +611,10 @@ section {
     width: 100%;
     border-radius: 100%;
     transition: transform 0.3s ease;
+
+    @include respond-to(medium) {
+      flex-direction: column;
+    }
 
     &-line {
       height: 1px;
@@ -517,6 +698,12 @@ section {
   height: auto;
   overflow: hidden;
 
+  @include respond-to(medium) {
+    align-items: start;
+    max-width: 100%;
+    padding: spacing('10-x') 0 spacing('4-x') 0;
+  }
+
   &-cover {
     img {
       top: 300px;
@@ -532,6 +719,10 @@ section {
   gap: spacing('2-x');
   align-items: center;
 
+  @include respond-to(medium) {
+    align-items: start;
+  }
+
   &-title {
     text-shadow: 0 0 8px #2f1f40, 0 0 8px #2f1f40, 0 0 5px #ffcaeb;
     margin-top: auto;
@@ -541,6 +732,12 @@ section {
     font-weight: weight('bold');
     text-align: center;
     color: font-color('neutral-10');
+
+    @include respond-to(medium) {
+      font-size: font-size('xl');
+      text-align: left;
+      max-width: 700px;
+    }
   }
 }
 
@@ -550,6 +747,14 @@ section {
   gap: spacing('2-x');
   max-width: 700px;
   padding: spacing('4-x') spacing('4-x');
+
+  @include respond-to(medium) {
+    width: 100%;
+    justify-content: left;
+    max-width: 100%;
+    padding: spacing('2-x') 0;
+    gap: spacing('1-x');
+  }
 
   &-olist {
       list-style-position: inside;
@@ -564,6 +769,10 @@ section {
     font-size: font-size('xxl');
     font-weight: weight('bold');
     color: font-color('neutral-10');
+
+    @include respond-to(medium) {
+      font-size: font-size('xl');
+    }
   }
 
   &-subtitle {
@@ -621,6 +830,7 @@ section {
 
   &-description {
     font-size: font-size('sm');
+    text-align: center;
   }
 }
 
@@ -638,6 +848,12 @@ section {
   padding: 0 spacing('2-x');
   gap: spacing('s');
   justify-content: left;
+
+  @include respond-to(medium) {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
 
   &-title {
     font-family: Inter;
@@ -689,6 +905,10 @@ section {
   gap: spacing('2-x');
   justify-content: left;
 
+  @include respond-to(medium) {
+    padding: 0;
+  }
+
   &-content {
     display: flex;
     gap: spacing('1-x');
@@ -697,6 +917,10 @@ section {
     border-radius: 8px;
     width: 100%;
     overflow: hidden;
+
+    @include respond-to(medium) {
+      flex-direction: column;
+    }
   }
 
   &-write {
@@ -729,6 +953,11 @@ section {
   display: flex;
   flex: 0 1 calc(50% - 24px);
   position: relative;
+
+  @include respond-to(medium) {
+    flex: 1 1 auto;
+    margin-top: spacing('1-x');
+  }
 }
 
 .study__rows-image img {
@@ -737,6 +966,14 @@ section {
   bottom: -100px;
   left: 40px;
   border-radius: 8px;
+
+  @include respond-to(medium) {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: static;
+
+  }
 }
 
 .modal {
