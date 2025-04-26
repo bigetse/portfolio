@@ -42,13 +42,10 @@
         <h3>☰</h3>
       </button>
       <div class="navbar__menu">
-        <a href="/" class="navbar__name-link">
-          <p>OSHIOLUMHETSE AUDU</p>
-          <p>PRODUCT DESIGNER</p>
-          <p>LAGOS (GMT +1)</p>
-        </a>
   
         <ul class="navbar__links">
+          <li class="hide-name"><a href="/">OSHIOLUMHETSE AUDU</a></li>
+          <li><a href="https://docs.google.com/document/d/1SeGpnNnfDAI4PC1cOdIdRalYwLP_NdulKUz5zR-_Lts/edit?usp=sharing" target="_blank">RESUME</a></li>
           <li><a href="#work">WORK</a></li>
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#contact">CONTACT</a></li>
@@ -58,40 +55,42 @@
   </header>
   <main>
     <!-- Hero Section -->
-    <section>
+    <section class="hero__section">
       <div class="hero">
 
-        <canvas id="riveCanvas" width="900" height="400"></canvas>
+        <canvas id="riveCanvas" width="900" height="300"></canvas>
 
         <h1 class="hero__title">
-          Hey, I'm Etse! I am a product designer building consumer and business products for fintech and other startups and scaleups.
+          Hey! I'm Etse, a product designer from Lagos. Let's decide if I’m the right fit for you. Start with the highlights below &#8595;
         </h1>
 
-        <div class="hero__job">
-          <img src="https://res.cloudinary.com/dekvvbagz/image/upload/v1743877223/work_xwiga5.svg" alt="Work icon" class="hero__icon">
-          <p>Currently, Senior Product Designer at Interswitch Group</p>
-        </div>
-
-        <div class="hero__links">
-          <a href="mailto:etseaudu@gmail.com" target="_blank" rel="noopener noreferrer" class="hero__links-btn">
-            etseaudu@gmail.com
-            <img src="https://res.cloudinary.com/dekvvbagz/image/upload/v1743877223/email_wl32uu.svg" alt="Email icon" class="hero__links-icon">
-          </a>
-          <div class="hero__links-line"></div>
-          <a href="https://docs.google.com/document/d/1SeGpnNnfDAI4PC1cOdIdRalYwLP_NdulKUz5zR-_Lts/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hero__links-btn">
-            Resume/CV
-            <img src="https://res.cloudinary.com/dekvvbagz/image/upload/v1743877223/cv_b0mvrs.svg" alt="CV icon" class="hero__links-icon">
-          </a>
-          <div class="hero__links-line"></div>
-          <a href="https://www.linkedin.com/in/etseaudu/" target="_blank" rel="noopener noreferrer" class="hero__links-btn">
-            LinkedIn
-            <img src="https://res.cloudinary.com/dekvvbagz/image/upload/v1743877223/linkedin_brshqj.svg" alt="LinkedIn icon" class="hero__links-icon">
-          </a>
-          <div class="hero__links-line"></div>
-          <a href="https://layers.to/etse" target="_blank" rel="noopener noreferrer" class="hero__links-btn">
-            UI shots
-            <img src="https://res.cloudinary.com/dekvvbagz/image/upload/v1743892963/layers_x261py.svg" alt="Layers icon" class="hero__links-icon">
-          </a>
+        <div class="hero__highlights">
+          <!--<div class="hero__highlights-head">
+            <p>Click on the highlights you like...</p>
+          </div>-->
+          <div class="hero__highlights-count">
+            <p class="hero__highlights-no"><span>We've got one!</span></p>
+            <button class="hero__highlights-reset">Reset highlights</button>
+          </div>
+          <div class="hero__highlights-body">
+              <ul class="hero__highlights-list">
+                <li class="hero__highlights-list-item">👩🏾‍🎨 5 years in. Still curious</li>
+                <li class="hero__highlights-list-item">🧑‍🎓 HCI degree? Check!</li>
+                <li class="hero__highlights-list-item">💰 Fintech experience? > 5 years</li>
+                <li class="hero__highlights-list-item">🏢 Health, real estate, staffing too</li>
+                <li class="hero__highlights-list-item">🔬 Research? Yes, and often</li>
+                <li class="hero__highlights-list-item">🧱 Design systems? I play well</li>
+                <li class="hero__highlights-list-item">🧑‍💻 Code-friendly (HTML/CSS/some JS)</li>
+                <li class="hero__highlights-list-item">🥇 Led small crews</li>
+                <li class="hero__highlights-list-item">🌱 Helped juniors grow</li>
+                <li class="hero__highlights-list-item">💭 Product + design strategy? That too</li>
+                <li class="hero__highlights-list-item">🧑‍🏫 Workshops? Love them</li>
+                <li class="hero__highlights-list-item">💼 Now: Senior PD @ Interswitch</li>
+              </ul>
+          </div>
+          <div class="hero__highlight-foot">
+            <p>Email me at <span>etseaudu@gmail.com</span> or check out my <span><a href="https://docs.google.com/document/d/1SeGpnNnfDAI4PC1cOdIdRalYwLP_NdulKUz5zR-_Lts/edit?usp=sharing">resume</a></span> and the <span><a href="#about">“about me”</a></span> section for more.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -100,8 +99,13 @@
      <section>
       <div id="work">
         <h2 class="work__title">
-          A few case studies
+          Now, check out some work...
         </h2>
+        <div class="work__guide">
+          <p>
+            The first two show detailed end-to-end process and the third is primarily UI (see extra UI work in the carousel below).
+          </p>
+        </div>
         <div class="work__content">
           <a href="/opscentral/">
             <div class="work__content-item">
@@ -203,7 +207,7 @@
      <section>
       <div id="about">
         <h2 class="about__title">
-          A bit about me
+          So far, so good? A bit more about me
         </h2>
           <a href="https://docs.google.com/document/d/1SeGpnNnfDAI4PC1cOdIdRalYwLP_NdulKUz5zR-_Lts/edit?usp=sharing" target="_blank" class="about__resume">
             View Resume
@@ -251,7 +255,7 @@
      <section>
       <div id="contact">
         <div class="contact__title">
-          I'd love to hear from you
+          Like what you’ve seen? Lets chat!
         </div>
         <div class="contact__links">
           <a href="mailto:etseaudu@gmail.com" target="_blank" rel="noopener noreferrer" class="contact__links-btn">
