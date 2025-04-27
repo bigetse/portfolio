@@ -10,6 +10,7 @@
 html {
   background: #1f2140;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -42,7 +43,7 @@ h {
 header {
   background: #1f2140;
   display: flex;
-  padding: 2rem;
+  padding: 1rem 3rem;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -69,7 +70,6 @@ header.hidden {
   display: flex;
   justify-content: space-between;
   z-index: 99;
-  padding-top: 2rem;
   position: relative;
 }
 .navbar__toggle {
@@ -117,6 +117,7 @@ header.hidden {
   .navbar {
     flex-direction: column;
     padding-bottom: 2rem;
+    padding-top: 2rem;
   }
   .navbar .navbar__name-link {
     display: none;
@@ -206,24 +207,13 @@ section {
 @media (max-width: 1024px) {
   section {
     min-height: auto;
-    padding: 2rem;
+    padding: 1rem;
     gap: 2rem;
   }
 }
 
 .hero__section {
   background: linear-gradient(to bottom, #1F2140, #2f1f40, #1F2140);
-}
-
-#riveCanvas {
-  position: absolute;
-  top: 20px;
-  z-index: 1;
-}
-@media (max-width: 1024px) {
-  #riveCanvas {
-    display: none;
-  }
 }
 
 .hero {
@@ -241,7 +231,7 @@ section {
     padding: auto;
     justify-content: left;
     max-width: 100%;
-    padding: 6rem 2rem;
+    padding: 6rem 1rem;
   }
 }
 .hero span {
@@ -383,25 +373,6 @@ section {
 .hero .hero__links-btn:hover .hero__links-icon {
   transform: scale(1.2);
   transition: transform 0.3s ease;
-}
-.hero .hero__job {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: auto;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-}
-@media (max-width: 1024px) {
-  .hero .hero__job {
-    justify-content: left;
-    text-align: left;
-  }
-}
-.hero .hero-icon {
-  height: 24px;
-  width: 24px;
 }
 
 #work {

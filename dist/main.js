@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let highlightsCount = document.querySelector('.hero__highlights-count');
     
 
-
-
     if (toggleButton && navMenu) {
         toggleButton.addEventListener('click', () => {
             navMenu.classList.toggle('active');
@@ -44,16 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
       lastScrollY = window.scrollY;
   });
 
-  const r = new rive.Rive({
-    src: "./dist/hero-animation.riv",
-    canvas: document.getElementById("riveCanvas"),
-    autoplay: true,
-    stateMachines: "State Machine 1",
-    onLoad: () => {
-      r.resizeDrawingSurfaceToCanvas()
-      console.log("Rive animation loaded!");
-    },
-  });
+  
 
     // Image sets for two scrolling rows
     const imagesRow1 = [
@@ -197,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function resetHighlights() {
         highlightsCounter = 0;
         highlightsActive.innerHTML = '';
-        console.log('Reset clicked')
+        console.log('Highlights reset');
 
         highlightsCount.style.display = 'none';
 
@@ -207,4 +196,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
         resetButton.addEventListener("click", resetHighlights);
+
+    // const r = new rive.Rive({
+    //     src: "./dist/hero-animation.riv",
+    //     canvas: document.getElementById("riveCanvas"),
+    //     autoplay: true,
+    //     stateMachines: "State Machine 1",
+    //     onLoad: () => {
+    //         r.resizeDrawingSurfaceToCanvas()
+    //         console.log("Rive animation loaded!");
+    //     },
+    //     });
 });

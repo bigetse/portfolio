@@ -30,6 +30,7 @@
 html {
   background: bg-color('primary');
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 body {
@@ -61,7 +62,7 @@ h {
 header {
   background: bg-color('primary');
   display: flex;
-  padding: spacing('2-x') spacing('-x');
+  padding: spacing('1-x') spacing('3-x');
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -88,7 +89,6 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 99;
-  padding-top: spacing('2-x');
   position: relative;
 
   &__toggle {
@@ -112,9 +112,7 @@ header {
     width: 100%;
     transition: transform 0.3s ease-in-out;
   }
-
   
-
   &__links {
     display: flex;
     width: 100%;
@@ -143,6 +141,7 @@ header {
   @include respond-to(medium) {
     flex-direction: column;
     padding-bottom: spacing('2-x');
+    padding-top: spacing('2-x');
 
     .navbar__name-link {
       display: none;
@@ -244,7 +243,7 @@ section {
 
   @include respond-to(medium) {
     min-height: auto;
-    padding: spacing('2-x');
+    padding: spacing('1-x');
     gap: spacing('2-x');
   }
 }
@@ -253,15 +252,15 @@ section {
   background: bg-color('gradient-linear');
 }
 
-#riveCanvas {
-  position: absolute;
-  top: 20px;
-  z-index: 1;
+// #riveCanvas {
+//   position: absolute;
+//   top: 20px;
+//   z-index: 1;
 
-  @include respond-to(medium) {
-    display: none;
-  }
-}
+//   @include respond-to(medium) {
+//     display: none;
+//   }
+// }
 
 .hero {
   max-width: 700px;
@@ -277,7 +276,7 @@ section {
     padding: auto;
     justify-content: left;
     max-width: 100%;
-    padding: spacing('6-x') spacing('2-x');
+    padding: spacing('6-x') spacing('1-x');
   }
 
   span {
@@ -432,26 +431,6 @@ section {
         }
       }
     }
-  }
-
-  #{&}__job {
-    display: flex;
-    justify-content: center;
-    gap: spacing('xs');
-    margin-bottom: auto;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-
-    @include respond-to(medium) {
-      justify-content: left;
-      text-align: left;
-    }
-  }
-
-  #{&}-icon {
-    height: 24px;
-    width: 24px;
   }
 }
 
