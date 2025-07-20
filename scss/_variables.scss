@@ -6,9 +6,9 @@ $breakpoint-small: 500px;
 $breakpoint-medium: 1024px;
 
 $color-background: (
-  'primary': #1f2140,
+  'primary': #ffffff,
   'secondary': #f0f0f0,
-  'tertiary': #2d2e4c,
+  'tertiary': #191919,
   'alternate': #2f1f40,
   'opaque': rgba(255, 255, 255, 0.05),
   'gradient-radial': radial-gradient(circle, #481b38, #2f1f40, #481b38, #1F2140),
@@ -23,9 +23,10 @@ $color-accent: (
 );
 
 $color-font: (
-  'neutral-10': #ffffff,
-  'neutral-20': #E5E6F0,
+  'neutral-10': #191919,
+  'neutral-20': #7d7d7d,
   'neutral-30': #aaaccc,
+  'white': #ffffff,
   'purple-10': #1f2140,
 );
 
@@ -46,6 +47,9 @@ $font-sizes: (
   'xxl': 2rem,
   '3xl': 2.5rem,
   '4xl': 3rem,
+  '5xl': 4rem,
+  '6xl': 6rem,
+  '10xl': 8rem,
 );
 
 $spacing: (
